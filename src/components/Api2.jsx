@@ -16,7 +16,6 @@ const Api2 = () => {
     setSearch("");
     setSearchresult([]);
   };
-  
   useEffect(() => {
     fetch("https://freetestapi.com/api/v1/airlines")
       .then((data) => data.json())
@@ -58,3 +57,34 @@ const Api2 = () => {
 };
 
 export default Api2;
+
+<form onSubmit={SearchHandle}>
+<input
+    type="text"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+></input>
+</form>
+<select>
+{
+   searchresult.length > 0 ? (
+    searchresult.map((item) => {
+        return(
+           <option key={item.id}>{item.name}</option>
+        )
+    })
+   )
+    :
+    (
+         <option>No result found</option>
+    )}
+</select>
+
+
+const SearchHandle = (e) =>{
+  e.preventDefault();
+  const filterdata = user.filter((item)=>{
+      return item.name.toLowerCase().includes(search.toLowerCase());
+  });
+  setSearchresult(filterdata);
+}

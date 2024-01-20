@@ -1,0 +1,75 @@
+/* Task.css */
+
+/* Style for the container div */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+  
+  /* Style for the input field */
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+  
+  /* Style for the select dropdown */
+  .select-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .select-field:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+  
+  /* Style for the ul and li elements */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+    font-size: 18px;
+    background-color: #f3f4f6;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  /* Style for the submit button */
+  button {
+    padding: 10px 20px;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1d4ed8;
+  }
+  

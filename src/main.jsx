@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Api2 from './components/Api2'
-import './index.css'
+import Taskmain from './components/Taskmain'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Api2/>
+    <Taskmain/>
   </React.StrictMode>,
 )
