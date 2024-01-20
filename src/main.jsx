@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Taskmain from './components/Taskmain'
+import Github from './components/github'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Taskmain/>
+    <Github/>
   </React.StrictMode>,
 )
