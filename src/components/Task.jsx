@@ -47,7 +47,7 @@ const Task = () => {
       </form>
 
       <div>
-        <h1>{selected} </h1>
+        <h1>{selected}</h1>
         <button onClick={deletesel}>Delete</button>
       </div>
       

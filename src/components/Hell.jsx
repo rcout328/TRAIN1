@@ -45,3 +45,29 @@ const Hell = () => {
 };
 
 export default Hell;
+
+
+// App.jsx
+import React from 'react'
+import Question from './Question'
+import data from './data.js' // Import data from data.js
+
+const App = () => {
+	return (
+		<main>
+			<div class="container">
+				<h3>FAQ</h3>
+				<section class="info">
+					<Question title="hello" />
+				</section>
+			</div>
+		</main>
+	)
+}
+
+export default App
+
+
+const getselect = (e) =>{
+  setSelected(e.target.value)
+}

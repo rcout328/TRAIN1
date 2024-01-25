@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Github from './components/github'
+
+import Approute from './components/Approute'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Github/>
+   <Approute/>
   </React.StrictMode>,
 )

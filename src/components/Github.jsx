@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Github.css";
+import { Link } from "react-router-dom";
 
 const Github = () => {
   const [user, setUser] = useState("");
@@ -45,6 +46,7 @@ const Github = () => {
         <li>Public Repositories: {result.public_repos}</li>
         <li>Public Gists: {result.public_gists}</li>
         <li>Email: {result.email}</li>
+        <Link to={`/follower/${result.login}`}>Followers</Link>
       </ul>
     </div>
   );

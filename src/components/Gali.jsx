@@ -1,28 +1,29 @@
-import { useState , useEffect} from "react"
 
+import { useState } from "react"
+
+
+const galiArray = [
+    'Lode',
+    'gandu',
+    'pandu',
+    'ok',
+    'ok',
+    'okok',
+]
 const Gali = () => {
 
-  const [products, setProducts] = useState()
+    const [gali , setGali] = useState(galiArray(0))
 
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-    .then((data) => data.json())
-    .then((data) => {
-      setProducts(data)
-    })
-    .catch(err => {
-      console.log(err)
-      setProducts([])
-    })
-
-    console.log(products)
-
-  }, [])
+    const Galide = () =>{
+        setGali(galiArray[gali + 1])
+    }
   return (
     <div>
-      products
+    
+        <h1>{gali}</h1>
+        <button onClick={Galide}>Gali Nikawao</button>
     </div>
+    
   )
 }
 
