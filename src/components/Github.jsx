@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Github.css";
+import "./Github.css"; // Import the external CSS file
 import { Link } from "react-router-dom";
 
 const Github = () => {
@@ -23,22 +23,24 @@ const Github = () => {
 
   return (
     <div className="container">
-      <h1 className="h12">Github Profiler</h1>
+      <div className="card">
+        <h1 className="title">Github Profiler</h1>
 
-      <input
-        type="text"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-        className="input-box"
-        placeholder="Enter GitHub username"
-      />
+        <input
+          type="text"
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
+          className="input-text"
+          placeholder="Enter GitHub username"
+        />
 
-      <button className="btn" onClick={fetchUserData}>
-        Submit
-      </button>
+        <button className="submit-button" onClick={fetchUserData}>
+          Submit
+        </button>
 
-      <ul className="user-info">
-        <li>Username: {result.login}</li>
+        {result.login && (
+          <ul className="user-info">
+          <li>Username: {result.login}</li>
         <li>Name: {result.name}</li>
         <li>Company: {result.company}</li>
         <li>Followers: {result.followers}</li>
@@ -46,8 +48,10 @@ const Github = () => {
         <li>Public Repositories: {result.public_repos}</li>
         <li>Public Gists: {result.public_gists}</li>
         <li>Email: {result.email}</li>
-        <Link to={`/follower/${result.login}`}>Followers</Link>
-      </ul>
+            <Link to={`/follower/${result.login}`} className="link">Followers</Link>
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
