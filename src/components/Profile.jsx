@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import "./Profile.css"; // Make sure this path is correct
+import { Link } from "react-router-dom";
 const Profile = () => {
     const { pro } = useParams();
     const [profile, setProfile] = useState(null);
@@ -17,22 +18,24 @@ const Profile = () => {
     }, [pro]);
 
     return (
-        <div>
+        <div className="profile-container">
+        <Link to="/" className="back-button">Back</Link>
             {profile ? (
-                <div>
-                    <h1>GitHub Profile for {pro}</h1>
-                    <li>Username: {profile.login}</li>
-        <li>Name: {profile.name}</li>
-        <li>Company: {profile.company}</li>
-        <li>Followers: {profile.followers}</li>
-        <li>Following: {profile.following}</li>
-        <li>Public Repositories: {profile.public_repos}</li>
-        <li>Public Gists: {profile.public_gists}</li>
-        <li>Email: {profile.email}</li>
-                    
+                <div className="profile-card">
+                    <img src={profile.avatar_url} alt={profile.login} className="profile-image"/>
+                    <h1 className="profile-title">{profile.name || profile.login}</h1>
+                    <ul className="profile-info">
+                        <li>Username: {profile.login}</li>
+                        <li>Company: {profile.company}</li>
+                        <li>Followers: {profile.followers}</li>
+                        <li>Following: {profile.following}</li>
+                        <li>Public Repos: {profile.public_repos}</li>
+                        <li>Public Gists: {profile.public_gists}</li>
+                        <li>Email: {profile.email}</li>
+                    </ul>
                 </div>
             ) : (
-                <p>Loading profile data...</p>
+                <p className="loading">Loading profile data...</p>
             )}
         </div>
     );

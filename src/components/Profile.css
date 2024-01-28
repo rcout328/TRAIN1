@@ -1,0 +1,85 @@
+/* ProfileStyles.css */
+
+.profile-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top right, #ff9ff3, #f368e0, #ff6b6b);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  .profile-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+    text-align: center;
+  }
+
+
+  /* Add these styles to your existing ProfileStyles.css */
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-decoration: none; /* Removes underline from link */
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff;
+  }
+  
+  .profile-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .profile-info {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 30px 20px;
+  }
+  
+  .profile-info li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .profile-info li:last-child {
+    border-bottom: none;
+  }
+  
+  .loading {
+    color: #fff;
+    font-size: 20px;
+  }
+  

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import "./Followers.css"; // Import the external CSS file
 
 const Followers = () => {
   const { loginkar } = useParams();
@@ -31,35 +31,29 @@ const Followers = () => {
   }, [loginkar]);
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-semibold mb-4">Followers of {loginkar}</h1>
+    <div className="container">
+      <h1 className="title">Followers of {loginkar}</h1>
+      <Link to="/" className="back-button">Back</Link>
       {loading ? (
-        <p className="text-gray-500">Loading...</p>
+        <p className="loading">Loading...</p>
       ) : error ? (
-        <p className="text-red-500">Error: {error}</p>
+        <p className="error">Error: {error}</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid-container">
           {followers.map((follower) => (
-            <div
-              key={follower.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:scale-105"
-            >
+            <div key={follower.id} className="card">
               <img
                 src={follower.avatar_url}
                 alt={`${follower.login}'s avatar`}
-                className="w-full h-32 object-cover"
               />
-              <div className="p-4">
-                <h2 className="text-lg font-semibold mb-2">
-                  <Link
-                    to={`/follower/profile/${follower.login}`}
-                    className="text-blue-600 hover:underline"
-                  >
+              <div className="card-content">
+                <h2 className="card-title">
+                  <Link to={`/follower/profile/${follower.login}`}>
                     {follower.login}
                   </Link>
                 </h2>
-                <p className="text-gray-600">{follower.bio}</p>
-                <p className="text-gray-600">{follower.location}</p>
+                <p className="card-text">{follower.bio}</p>
+                <p className="card-text">{follower.location}</p>
               </div>
             </div>
           ))}
